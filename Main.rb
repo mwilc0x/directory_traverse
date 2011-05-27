@@ -1,7 +1,5 @@
 class Main
   $a = Hash.new
-  $i = 0
-  $b = ["a.html", "b.html", "c.html", "d.html", "e.html", "f.html", "g.html", "h.html", "i.html", "j.html", "k.html", "z.html", "v.html", "y.html"]
   $full = File.expand_path(Dir.getwd)
 end
 
@@ -19,14 +17,12 @@ end
       elsif File.file?(item)
         if File.extname(item).eql?('.html')
           puts "Found an HTML file"
-          $i += 1
         end
       end
     end
     
     if $full.size != 0
       $full = $full[0, $full.rindex('/')]
-    dir = $full
       searchDir($full)
     else
       return true

@@ -13,12 +13,12 @@ end
     $a.store(dir, true)
     Dir.chdir(dir)
     Dir['*'].sort.each do |item|
-      if File.directory?(item) && !$a.has_key?(dir+"/"+item)
+      if File.directory?(item)
         #if it's a directory we haven't search, recurse on it
         searchDir(dir+"/"+item)
       elsif File.file?(item)
         if File.extname(item).eql?('.html')
-          File.rename(item, $b[$i])
+          puts "Found an HTML file"
           $i += 1
         end
       end

@@ -1,0 +1,3 @@
+Just a first initial attempt at some recursion using ruby. Backs out of current folder that you're in and if it encounters any HTML files it will rename them using previously initialized array of filenames.
+
+Possibly could initially read in a text file with a big list of HTML files and store those into an array as the new filenames. 
